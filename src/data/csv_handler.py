@@ -3,6 +3,7 @@ import pandas as pd
 class CSVHandler():
     def __init__(self):
         """ Input/Output Handler class. """
+        pass
 
     def load_csv(self, path: str):
         """ Loads the .csv path into a pandas dataframe.
