@@ -1,0 +1,52 @@
+{
+    "1": {
+        "country": "United States",
+        "name": "American Airlines",
+        "site": "https://www.airlinequality.com/airline-reviews/american-airlines/"
+    },
+    "2": {
+        "country": "China",
+        "name": "China Southern Airlines",
+        "site": "https://www.airlinequality.com/airline-reviews/china-southern-airlines/"
+    },
+    "3": {
+        "country": "Ireland",
+        "name": "Ryanair",
+        "site": "https://www.airlinequality.com/airline-reviews/ryanair"
+    },
+    "4": {
+        "country": "India",
+        "name": "IndiGo",
+        "site": "https://www.airlinequality.com/airline-reviews/indigo-airlines/"
+    },
+    "5": {
+        "country": "United Kingdom",
+        "name": "British Airways",
+        "site": "https://www.airlinequality.com/airline-reviews/british-airways/"
+    },
+    "6": {
+        "country": "Japan",
+        "name": "Japan Airlines",
+        "site": "https://www.airlinequality.com/airline-reviews/japan-airlines/"
+    },
+    "7": {
+        "country": "Russia",
+        "name": "Aeroflot",
+        "site": "https://www.airlinequality.com/airline-reviews/aeroflot-russian-airlines/"
+    },
+    "8": {
+        "country": "Turkey",
+        "name": "Turkish Airlines",
+        "site": "https://www.airlinequality.com/airline-reviews/turkish-airlines/"
+    },
+    "9": {
+        "country": "Germany",
+        "name": "Deutsche Lufthansa AG",
+        "site": "https://www.airlinequality.com/airline-reviews/lufthansa/"
+    },
+    "10": {
+        "country": "Brazil",
+        "name": "Azul",
+        "site": "https://www.airlinequality.com/airline-reviews/azul-linhas-aereas-brasileiras/"
+    }
+}

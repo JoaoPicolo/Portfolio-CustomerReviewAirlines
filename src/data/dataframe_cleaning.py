@@ -2,7 +2,7 @@ import re
 
 import pandas as pd
 
-class DatafremeCleaner():
+class DataframeCleaner():
     def __init__(self, dataframe: pd.DataFrame):
         """ Useful methods for dataframe cleaning. """
         self.dataframe = dataframe
