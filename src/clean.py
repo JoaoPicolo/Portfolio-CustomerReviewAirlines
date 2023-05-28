@@ -1,5 +1,5 @@
-from typing import List
 from os import listdir
+from typing import List
 
 from utils.arguments import get_parser
 from utils.csv_handler import CSVHandler

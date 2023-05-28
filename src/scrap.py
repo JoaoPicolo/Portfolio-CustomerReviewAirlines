@@ -15,12 +15,14 @@ def main():
     airlines = json_parser.get_airlines_information()
 
     for airline in airlines:
+        name = to_snake_case(airline["name"])
+        print(f"Will scrap airline { name }")
         scraper = AirlineWebScraper(base_url=airline["site"],
                                     airline=airline["name"],
-                                    country=airline["country"])
+                                    country=airline["country"],
+                                    wait_secs=0.25)
         dataframe = scraper.update_reviews_table(last_review_id=0)
 
-        name = to_snake_case(airline["name"])
         now = datetime.now()
         csv_handler.save_to_csv(dataframe, path=f"{args.output}/{name}_{now}.csv")
 
