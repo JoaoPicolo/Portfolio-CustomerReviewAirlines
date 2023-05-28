@@ -1,4 +1,4 @@
-from os import listdir
+import os
 from typing import List
 
 from utils.arguments import get_parser
@@ -10,9 +10,9 @@ def main():
     csv_handler = CSVHandler()
     
     files: List[str] = []
-    if path.isdir(args.input):
-        files = [args.input + f for f in listdir(args.input)]
-    elif path.isfile(args.input):
+    if os.path.isdir(args.input):
+        files = [args.input + "/" + f for f in os.listdir(args.input)]
+    elif os.path.isfile(args.input):
         files.append(args.input)
 
     for file in files:

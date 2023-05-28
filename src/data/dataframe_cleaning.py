@@ -1,4 +1,5 @@
 import re
+from typing import List
 
 import pandas as pd
 
@@ -6,6 +7,15 @@ class DataframeCleaner():
     def __init__(self, dataframe: pd.DataFrame):
         """ Useful methods for dataframe cleaning. """
         self.dataframe = dataframe
+
+
+    def drop_duplicates(self, fields: List[str]):
+        """ Drops rows with duplicates.
+        
+        Arguments:
+        field: Fields to be used when looking for duplicates. Normally the ID.
+        """
+        self.dataframe = self.dataframe.drop_duplicates(fields)
 
 
     def get_dataframe(self):
@@ -90,6 +100,8 @@ class DataframeCleaner():
     def clean_dataframe(self):
         """ Cleans the given dataframe. """
         self.standardize_headers()
+
+        self.drop_duplicates(["id"])
 
         self.series_clean(series_name="header", value='"')
 
