@@ -107,14 +107,15 @@ class DataframeCleaner():
         self.categorical_to_bool(series_name="verified_trip", true_value="Trip Verified")
         self.categorical_to_bool(series_name="recommended", true_value="Yes")
 
-        self.fill_nan(columns=["cabin_staff_service", "food_&_beverages",
-                               "ground_service", "inflight_entertainment",
-                               "rating", "seat_comfort", "value_for_money",
-                               "wifi_&_connectivity"], fill_value=-1)
+        self.fill_nan(columns=["rating", "value_for_money", "id",
+                               "seat_comfort", "cabin_staff_service",
+                               "food_&_beverages", "inflight_entertainment",
+                               "ground_service", "wifi_&_connectivity"], fill_value=-1)
 
-        self.fill_nan(columns=["aircraft", "airline_name", "country",
-                               "date", "recommended", "seat_type",
-                               "type_of_traveller", "verified_trip"], fill_value="Not informed")
+        self.fill_nan(columns=["date", "header", "content", "seat_type", "recommended",
+                               "aircraft", "type_of_traveller", "route",
+                               "date_flown", "airline_name", "country",
+                               "verified_trip"], fill_value="Not informed")
 
         self.strip_categorical_columns()
 

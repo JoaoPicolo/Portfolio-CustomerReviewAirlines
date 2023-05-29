@@ -10,12 +10,6 @@ def main():
     args = get_parser()
     csv_handler = CSVHandler()
     
-    dataframe = csv_handler.load_csv("../data/processed/reviews.csv")
-    sub = dataframe[dataframe["cabin_staff_service"] >= 0]
-    print(sub["cabin_staff_service"].mean())
-
-    exit(0)
-    
     files: List[str] = []
     if os.path.isdir(args.input):
         files = [args.input + "/" + f for f in os.listdir(args.input)]
