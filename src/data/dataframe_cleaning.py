@@ -75,15 +75,18 @@ class DataframeCleaner():
         self.dataframe[series_name] = true_array
 
 
-    def fill_nan(self, columns: List[str], fill_value: Union[str, int]):
-        """ Fills NaN values.
+    def fill_nan(self, column_types: List[str], fill_value: Union[str, int]):
+        """ Fills NaN values for a given column type.
         
         Arguments:
-        columns: List of columns to be filled.
+        column_type: List of columns types to be filled.
         fill_value: Value to be used on filling.
         """
+        columns = self.dataframe.columns
         for col in columns:
-            self.dataframe[col] = self.dataframe[col].fillna(fill_value)
+            column = self.dataframe[col]
+            if column.dtype in column_types:
+                self.dataframe[col] = self.dataframe[col].fillna(fill_value)
 
 
     def strip_categorical_columns(self):
@@ -107,15 +110,8 @@ class DataframeCleaner():
         self.categorical_to_bool(series_name="verified_trip", true_value="Trip Verified")
         self.categorical_to_bool(series_name="recommended", true_value="Yes")
 
-        self.fill_nan(columns=["rating", "value_for_money", "id",
-                               "seat_comfort", "cabin_staff_service",
-                               "food_&_beverages", "inflight_entertainment",
-                               "ground_service", "wifi_&_connectivity"], fill_value=-1)
-
-        self.fill_nan(columns=["date", "header", "content", "seat_type", "recommended",
-                               "aircraft", "type_of_traveller", "route",
-                               "date_flown", "airline_name", "country",
-                               "verified_trip"], fill_value="Not informed")
+        self.fill_nan(column_types=["int64", "float64"], fill_value=-1)
+        self.fill_nan(column_types=["object"], fill_value="Not informed")
 
         self.strip_categorical_columns()
 

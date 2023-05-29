@@ -12,8 +12,8 @@ def main():
 
     json_parser = AirlinesJSONParser()
     json_parser.load_json(args.input)
-    airlines = json_parser.get_airlines_information()
 
+    airlines = json_parser.get_airlines_information()
     for airline in airlines:
         name = to_snake_case(airline["name"])
         print(f"Will scrap airline { name }")
