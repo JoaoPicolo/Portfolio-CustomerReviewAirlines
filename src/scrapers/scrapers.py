@@ -65,7 +65,11 @@ class AirlineWebScraper():
         values = data[1::2]
         for key, value in zip(keys, values):
             key = self.get_text(key)
-            star_value = value.find("span", {"class": "star fill" })
+            star_value = None
+            try:
+                star_value = value.find_all("span", { "class": "star fill" })[-1]
+            except:
+                pass
             if star_value:
                 value = self.get_text(star_value)
             else:

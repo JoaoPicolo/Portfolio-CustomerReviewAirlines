@@ -23,7 +23,7 @@ def main():
                                     wait_secs=0.25)
         dataframe = scraper.update_reviews_table(last_review_id=0)
 
-        now = datetime.now()
+        now = datetime.now().date()
         csv_handler.save_to_csv(dataframe, path=f"{args.output}/{name}_{now}.csv")
 
 if __name__ == "__main__":
