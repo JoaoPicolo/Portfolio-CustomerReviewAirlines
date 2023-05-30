@@ -1,4 +1,4 @@
-# Portfolio Customer Review British Airways
+# Portfolio Airline Customer Review
 
 <p align="center">
   <img style="width: 100px" src="./assets/logo.png" alt="Project's logo"/>
