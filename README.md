@@ -6,6 +6,8 @@
 
 Project develope to collect customer's airlines reviews from [SkyTrax](https://www.airlinequality.com/).
 
+The description of the steps taken during the development can be found on [Medium](https://picolojoaop.medium.com/airline-customer-review-web-scraping-1e812a79b995).
+
 **NOTE:** you may need to change the source files to fit your needs, feel free to do it. If any help is necessary, please contact me.
 
 ## Data structure
