@@ -1,3 +1,5 @@
+import pytest
+
 from code.parsers.json import JSONParser, AirlinesJSONParser
 
 class TestJSONParser:
@@ -6,6 +8,12 @@ class TestJSONParser:
         parser = JSONParser()
         res = parser.load_json(json_path)
         assert res == None
+
+    def test_load_json_invalid(self):
+        """ Tests if JSON is being correctly loaded """
+        parser = JSONParser()
+        with pytest.raises(FileNotFoundError):
+            _ = parser.load_json("./file.json")
 
 
 class TestAirlinesJSONParser:
@@ -25,3 +33,10 @@ class TestAirlinesJSONParser:
                 break
 
         assert complete == True
+
+
+    def test_get_airlines_information_no_json(self):
+        """ Tests if airlines are being correctly loaded """
+        parser = AirlinesJSONParser()
+        with pytest.raises(FileNotFoundError):
+            _ = parser.load_json("./file.json")

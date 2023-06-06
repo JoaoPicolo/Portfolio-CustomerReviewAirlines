@@ -18,8 +18,8 @@ class JSONParser():
             file = open(path, 'r')
             self.json = json.load(file)
             file.close()
-        except:
-            print("Error reading JSON")
+        except ValueError as e:
+            print("Error reading JSON", e)
 
 
 class AirlinesJSONParser(JSONParser):
@@ -39,15 +39,12 @@ class AirlinesJSONParser(JSONParser):
         """
         if self.json is None:
             print("Make sure to load the JSON file")
-            return
+            raise ValueError()
 
-        try:
-            airlines: List[Dict] = []
-            for _, value in self.json.items():
-                airlines.append(value)
+        airlines: List[Dict] = []
+        for _, value in self.json.items():
+            airlines.append(value)
 
-            return airlines
-        except:
-            print("Error getting airlines content")
+        return airlines
 
     
