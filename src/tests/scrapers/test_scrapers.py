@@ -1,5 +1,6 @@
 from typing import Dict
 
+import pytest
 import pandas as pd
 from bs4 import BeautifulSoup
 

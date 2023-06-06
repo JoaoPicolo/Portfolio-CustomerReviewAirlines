@@ -18,8 +18,9 @@ class JSONParser():
             file = open(path, 'r')
             self.json = json.load(file)
             file.close()
-        except ValueError as e:
-            print("Error reading JSON", e)
+        except ValueError as error:
+            print("Error reading JSON", error)
+            raise error
 
 
 class AirlinesJSONParser(JSONParser):

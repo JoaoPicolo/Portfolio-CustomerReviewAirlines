@@ -162,7 +162,7 @@ class AirlineWebScraper():
 
         try:
             table = self.add_metadata(table)
-        except:
-            pass
+        except Exception as exception:
+            raise exception
 
         return table
