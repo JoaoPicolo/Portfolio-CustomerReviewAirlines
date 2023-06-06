@@ -4,6 +4,16 @@
   <img style="width: 100px" src="./assets/logo.png" alt="Project's logo"/>
 </p>
 
+<div align="center">
+
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
+  [![Build Status](https://app.travis-ci.com/JoaoPicolo/Portfolio-CustomerReviewAirlines.svg?branch=main)](https://app.travis-ci.com/JoaoPicolo/Portfolio-CustomerReviewAirlines)
+  [![codecov](https://codecov.io/gh/JoaoPicolo/Portfolio-CustomerReviewAirlines/branch/main/graph/badge.svg?token=9EQYB1J5VD)](https://codecov.io/gh/JoaoPicolo/Portfolio-CustomerReviewAirlines)
+
+</div>
+
+---
+
 Project develope to collect customer's airlines reviews from [SkyTrax](https://www.airlinequality.com/).
 
 The description of the steps taken during the development can be found on [Medium](https://picolojoaop.medium.com/airline-customer-review-web-scraping-1e812a79b995).
