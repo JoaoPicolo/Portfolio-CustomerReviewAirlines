@@ -3,10 +3,14 @@ from typing import List, Union
 
 import pandas as pd
 
-class DataframeCleaner():
+class DataframeCleaner:
     def __init__(self, dataframe: pd.DataFrame):
         """ Useful methods for dataframe cleaning. """
         self.dataframe = dataframe
+
+    def get_dataframe(self):
+        """ Returns the current dataframe manipulated by this class. """
+        return self.dataframe
 
 
     def drop_duplicates(self, fields: List[str]):
@@ -16,11 +20,6 @@ class DataframeCleaner():
         field: Fields to be used when looking for duplicates. Normally the ID.
         """
         self.dataframe = self.dataframe.drop_duplicates(fields)
-
-
-    def get_dataframe(self):
-        """ Returns the current dataframe manipulated by this class. """
-        return self.dataframe
 
 
     def standardize_headers(self):
@@ -56,9 +55,12 @@ class DataframeCleaner():
         new_series: Name to be given to the new Series.
         separator: Separator to be used as split condition.
         """
-        split_series = self.dataframe[ori_series].str.split(pat=separator, n=1, expand=True)
-        self.dataframe[new_series] = split_series[0]
-        self.dataframe[ori_series] = split_series[1]
+        try:
+            split_series = self.dataframe[ori_series].str.split(pat=separator, n=1, expand=True)
+            self.dataframe[new_series] = split_series[0]
+            self.dataframe[ori_series] = split_series[1]
+        except:
+            pass
 
 
     def categorical_to_bool(self, series_name: str, true_value: str):
@@ -82,10 +84,8 @@ class DataframeCleaner():
         column_type: List of columns types to be filled.
         fill_value: Value to be used on filling.
         """
-        columns = self.dataframe.columns
-        for col in columns:
-            column = self.dataframe[col]
-            if column.dtype in column_types:
+        for col in self.dataframe:
+            if self.dataframe[col].dtype.name in column_types:
                 self.dataframe[col] = self.dataframe[col].fillna(fill_value)
 
 

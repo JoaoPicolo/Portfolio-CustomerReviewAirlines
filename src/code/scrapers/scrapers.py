@@ -1,3 +1,4 @@
+import math
 import time
 from typing import Any
 
@@ -112,7 +113,7 @@ class AirlineWebScraper():
         return table
 
 
-    def update_reviews_table(self, last_review_id: int):
+    def update_reviews_table(self, last_review_id: int, max_reviews: int = None):
         """ Stores the reviews into a table.
         
         This function will query the reviews from oldest to newest, so
@@ -131,8 +132,12 @@ class AirlineWebScraper():
 
         try_max = 2
         try_count = 0
+        current = 0
 
-        while try_count < try_max:
+        if max_reviews == None:
+            max_reviews = math.inf
+
+        while try_count < try_max and current < max_reviews:
             try:
                 current_id = last_review_id + 1
                 print(f"Will get review id {current_id}")
@@ -142,6 +147,7 @@ class AirlineWebScraper():
                 reviews_df = pd.DataFrame([review])
                 try_count = 0       # Resets to get the next review
                 last_review_id += 1 # Increments because will try to get next
+                current += 1
 
                 if table is not None:
                     table = pd.concat([table, reviews_df])

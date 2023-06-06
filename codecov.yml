@@ -1,0 +1,4 @@
+# Ignores main functions once the code inside them
+#  have already been tested on unit testing
+ignore:
+  - "src/code/*.py"

@@ -2,7 +2,7 @@ from typing import List
 
 import pandas as pd
 
-class DataframeMerger():
+class DataframeMerger:
     def __init__(self, source_files: List[str]):
         """ Useful methods for dataframe merging. """
         self.source_files = source_files
