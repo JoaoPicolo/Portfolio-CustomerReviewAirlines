@@ -17,4 +17,3 @@ soupsieve==2.4.1
 tomli==2.0.1
 tzdata==2023.3
 urllib3==1.26.6
-argparse==1.4.0

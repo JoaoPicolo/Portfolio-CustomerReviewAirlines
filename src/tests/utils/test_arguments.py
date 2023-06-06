@@ -1,14 +1,6 @@
 import os
 
-from argparse import Namespace
-
-from code.utils.arguments import get_parser, get_files_list
-
-
-def test_get_parser():
-    """ Tests if reading args is working """
-    res = get_parser()
-    assert isinstance(res, Namespace)
+from code.utils.arguments import get_files_list
 
 
 def test_get_files_list():
