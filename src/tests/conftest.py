@@ -7,7 +7,7 @@ import pandas as pd
 @pytest.fixture(scope="function")
 def random_dataframe():
     """ Creates a DataFrame to be used on testing """
-    base_dir = "./raw_csv/"
+    base_dir = "./src/tests/raw_csv/"
     files = os.listdir(base_dir)
     file = np.random.choice(files)
     
