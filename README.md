@@ -6,7 +6,6 @@
 
 <div align="center">
 
-  [![Status](https://img.shields.io/badge/status-active-success.svg)]() 
   [![Build Status](https://app.travis-ci.com/JoaoPicolo/Portfolio-CustomerReviewAirlines.svg?branch=main)](https://app.travis-ci.com/JoaoPicolo/Portfolio-CustomerReviewAirlines)
   [![codecov](https://codecov.io/gh/JoaoPicolo/Portfolio-CustomerReviewAirlines/branch/main/graph/badge.svg?token=9EQYB1J5VD)](https://codecov.io/gh/JoaoPicolo/Portfolio-CustomerReviewAirlines)
 
