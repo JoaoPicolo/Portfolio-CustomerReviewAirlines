@@ -18,7 +18,7 @@ def random_dataframe():
 @pytest.fixture(scope="function")
 def dataframe_paths():
     """ Returns all DataFrame paths to be used on testing """
-    base_dir = "./raw_csv/"
+    base_dir = "./src/tests/raw_csv/"
     
     results = []
     files = os.listdir(base_dir)
@@ -31,7 +31,7 @@ def dataframe_paths():
 @pytest.fixture(scope="function")
 def json_path():
     """ Returns all the path to the airlines json """
-    path = "./raw_json/airlines.json"
+    path = "./src/tests/raw_json/airlines.json"
     return path
 
 
